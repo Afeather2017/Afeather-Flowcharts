@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-15T15:28:58.065Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="g2xEqUG31vRKJdwVlKoV" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-15T15:30:00.294Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="PkB9-qnWjqqVRkejOz6r" version="20.0.4" type="github">
   <diagram name="Page-1" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
     <mxGraphModel dx="827" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -100,7 +100,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="_lcW1vpROQFDcOmQhoKf-55" value="1.设置两个空播放列表的提示&lt;br&gt;2.设置播放的音乐编号为0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="120" y="122" width="90" height="60" as="geometry" />
+          <mxGeometry x="120" y="120.5" width="90" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_lcW1vpROQFDcOmQhoKf-57" value="1.调用命令，下载更新列表，放在音乐名列表中。&lt;br&gt;2.提示正在更新列表" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="545" y="10" width="110" height="71.87" as="geometry" />
@@ -239,7 +239,7 @@
           <mxGeometry x="100" y="180.5" width="65" height="53" as="geometry" />
         </mxCell>
         <mxCell id="_lcW1vpROQFDcOmQhoKf-115" value="时间轴、进度条、歌词、播放列表、关闭“空列表”和“稍后”的提示&lt;br&gt;十有八九需要调用命令行" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="208.13" y="372" width="138.75" height="68" as="geometry" />
+          <mxGeometry x="208.12" y="364" width="138.75" height="68" as="geometry" />
         </mxCell>
         <mxCell id="_lcW1vpROQFDcOmQhoKf-116" value="提示稍后" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="365" y="204.5" width="60" height="17" as="geometry" />
