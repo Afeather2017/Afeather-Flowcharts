@@ -1,9 +1,73 @@
-<mxfile host="app.diagrams.net" modified="2023-05-15T10:21:31.410Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.2.9" etag="HmTdS_VIGpZqh6RzpOVE" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-15T10:37:17.631Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="6rwUXX34_iqVbLEMzpgm" version="21.2.9" type="github">
   <diagram name="第 1 页" id="HK3Lnw1jP-vFx_Vs-bpy">
-    <mxGraphModel>
+    <mxGraphModel dx="692" dy="404" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="sfHemM844_e1ARQEeN9F-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-1" target="sfHemM844_e1ARQEeN9F-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-1" target="sfHemM844_e1ARQEeN9F-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-1" value="总控" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="290" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="312" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-2" value="插件系统" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="234" y="290" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-3" value="查询系统" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="410" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-4" value="缓存系统" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="350" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-6" value="数据库" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="470" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-7" target="sfHemM844_e1ARQEeN9F-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-7" value="网页前端" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="200" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-13" value="网站&lt;br&gt;类别&lt;br&gt;关键字" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="338" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-15" value="查询结果" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-17" value="插件" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="306" y="277" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-18" value="网页数据" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="306" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-19" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-4" target="sfHemM844_e1ARQEeN9F-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="340" as="sourcePoint" />
+            <mxPoint x="460" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-3" target="sfHemM844_e1ARQEeN9F-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="340" as="sourcePoint" />
+            <mxPoint x="410" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sfHemM844_e1ARQEeN9F-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sfHemM844_e1ARQEeN9F-6" target="sfHemM844_e1ARQEeN9F-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="415" y="420" as="sourcePoint" />
+            <mxPoint x="415" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
