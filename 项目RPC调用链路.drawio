@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-09-06T19:00:56.266Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="BjoWm5R5cv5TKGtraNp9" version="21.3.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-06T19:01:13.768Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="kM_I7TF89m6BvaOPJmQM" version="21.3.6" type="github">
   <diagram name="第 1 页" id="JCQ3mQCC7F4klXU9Xc_I">
     <mxGraphModel dx="1673" dy="973" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="WqGxsUL2lOGZQpzz3ai0-1" value="链路优化" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;labelBackgroundColor=none;" vertex="1" parent="1">
+        <mxCell id="WqGxsUL2lOGZQpzz3ai0-1" value="链路优化" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;labelBackgroundColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="30" y="150" width="760" height="770" as="geometry" />
         </mxCell>
         <mxCell id="WqGxsUL2lOGZQpzz3ai0-2" value="consul&lt;br&gt;服务注册" style="html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=none;" vertex="1" parent="1">
