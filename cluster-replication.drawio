@@ -1,9 +1,73 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
     <mxGraphModel dx="1207" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="uTmtSbhfa73AENKRCiW3-1" value="从:7001" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="20" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-2" value="主:7000" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="20" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-8" value="connect" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uTmtSbhfa73AENKRCiW3-7">
+          <mxGeometry x="-0.1464" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-3" value="初始状态为REPL_STATE_NONE，收到cluster replicate后，更换shard_id、新增从节点、删除自己本来slot对应的订阅、重置手动Failover，创建与主节点端口为7000的连接，回调是syncWithMaster，状态转换为REPL_STATE_CONNECTING" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="60" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-5" target="uTmtSbhfa73AENKRCiW3-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="270" />
+              <mxPoint x="641" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-5" value="非阻塞地发送PING命令" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="170" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="160" />
+              <mxPoint x="220" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-10" value="connect完成，syncWithMaster回调触发" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uTmtSbhfa73AENKRCiW3-9">
+          <mxGeometry x="0.61" y="-1" relative="1" as="geometry">
+            <mxPoint x="68" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-6" value="Accept连接，设置回调为readQueryFromClient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="120" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-12" value="Accept连接，设置回调为readQueryFromClient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="300" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-14" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="330" as="sourcePoint" />
+            <mxPoint x="440" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-15" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="70" as="sourcePoint" />
+            <mxPoint x="230" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
