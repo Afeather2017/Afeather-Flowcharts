@@ -4,69 +4,114 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="uTmtSbhfa73AENKRCiW3-1" value="从:7001" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-1" value="从:7001" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="190" y="20" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-2" value="主:7000" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-2" value="主:7000" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="610" y="20" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-6">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="220" y="135" />
+              <mxPoint x="220" y="110" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-8" value="connect" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uTmtSbhfa73AENKRCiW3-7">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-8" value="connect" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uTmtSbhfa73AENKRCiW3-7" vertex="1" connectable="0">
           <mxGeometry x="-0.1464" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="21" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-3" value="初始状态为REPL_STATE_NONE，收到cluster replicate后，更换shard_id、新增从节点、删除自己本来slot对应的订阅、重置手动Failover，创建与主节点端口为7000的连接，回调是syncWithMaster，状态转换为REPL_STATE_CONNECTING" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="30" y="60" width="380" height="60" as="geometry" />
+        <mxCell id="uTmtSbhfa73AENKRCiW3-3" value="初始状态为NONE，收到cluster replicate后，更换shard_id、新增从节点、删除自己本来slot对应的订阅、重置手动Failover，创建与主节点端口为7000的连接，回调是syncWithMaster，状态转换为CONNECTING" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="30" y="60" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-5" target="uTmtSbhfa73AENKRCiW3-12">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="uTmtSbhfa73AENKRCiW3-5" target="uTmtSbhfa73AENKRCiW3-12" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="640" y="290" as="targetPoint" />
+            <mxPoint x="640" y="270" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="220" y="270" />
-              <mxPoint x="641" y="270" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-5" value="非阻塞地发送PING命令" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="30" y="170" width="380" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-5">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="640" y="160" />
               <mxPoint x="220" y="160" />
+              <mxPoint x="600" y="160" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-10" value="connect完成，syncWithMaster回调触发" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uTmtSbhfa73AENKRCiW3-9">
-          <mxGeometry x="0.61" y="-1" relative="1" as="geometry">
-            <mxPoint x="68" as="offset" />
+        <mxCell id="uTmtSbhfa73AENKRCiW3-5" value="发送PING命令，转到RECEIVE_PING_REPLY状态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="82.5" y="130" width="275" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="140" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-6" value="Accept连接，设置回调为readQueryFromClient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="450" y="120" width="380" height="30" as="geometry" />
+        <mxCell id="uTmtSbhfa73AENKRCiW3-10" value="connect完成，syncWithMaster回调触发" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="uTmtSbhfa73AENKRCiW3-9" vertex="1" connectable="0">
+          <mxGeometry x="0.61" y="-1" relative="1" as="geometry">
+            <mxPoint x="100" y="-4" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-12" value="Accept连接，设置回调为readQueryFromClient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="450" y="300" width="380" height="30" as="geometry" />
+        <mxCell id="uTmtSbhfa73AENKRCiW3-6" value="Accept连接，设置回调为readQueryFromClient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="512.5" y="100" width="255" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-14" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-1">
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-12" target="ilX25yQ41fgXcGCMx8rG-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="200" as="targetPoint" />
+            <mxPoint x="705" y="180" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="640" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-12" value="返回+PONG" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="600" y="150" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uTmtSbhfa73AENKRCiW3-14" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="uTmtSbhfa73AENKRCiW3-3" target="uTmtSbhfa73AENKRCiW3-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="390" y="330" as="sourcePoint" />
             <mxPoint x="440" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="uTmtSbhfa73AENKRCiW3-15" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-2">
+        <mxCell id="uTmtSbhfa73AENKRCiW3-15" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="uTmtSbhfa73AENKRCiW3-6" target="uTmtSbhfa73AENKRCiW3-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="230" y="70" as="sourcePoint" />
             <mxPoint x="230" y="50" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ilX25yQ41fgXcGCMx8rG-8" target="ilX25yQ41fgXcGCMx8rG-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="260" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="640" y="285" />
+              <mxPoint x="410" y="285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-8" value="设置slave_listening_port为7001，slave_addr，增加SLAVE_CAPA_EOF和&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;SLAVE_CAPA_PSYNC2&lt;/span&gt;能力，返回3个+OK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="443.12" y="230" width="393.75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ilX25yQ41fgXcGCMx8rG-11" target="ilX25yQ41fgXcGCMx8rG-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="443.1300000000001" y="245" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-11" value="收到PONG，进入SEND_HANDSHAKE状态，发送REPLCONF listening-port 7001，REPLCONF ip-address 地址，REPLCONF capa eof capa psync2，告知IP、端口、支持eof和新版sync，进入RECEIVE_AUTH_REPLY，由于不考虑认证，故直接进入了RECEIVE_PORT_REPLY" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="170" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ilX25yQ41fgXcGCMx8rG-14" target="ilX25yQ41fgXcGCMx8rG-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-14" value="收到第一个+OK，状态转为RECEIVE_IP_REPLY，收到第二个转换为RECEIVE_CAPA_REPLY，第三个则转换为SEND_PSYNC，随后发起PSYNC，设置偏移量为-1，状态转为RECEIVE_PSYNC_REPLY" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-17" value="PSYNC,stat_sync_full++,c-&amp;gt;replstate=WAIT_BGSAVE_START,c-&amp;gt;repldbfd=-1,c-&amp;gt;flags|=CLIENT_SLAVE,server.slaves.Add(c),(backlog?),检查是否该复用之前的rdb，不能则等待创建" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="320" width="380" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
