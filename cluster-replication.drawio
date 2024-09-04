@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.8">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.10">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="1207" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1237" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -86,7 +86,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ilX25yQ41fgXcGCMx8rG-8" value="设置slave_listening_port为7001，slave_addr，增加SLAVE_CAPA_EOF和&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;SLAVE_CAPA_PSYNC2&lt;/span&gt;能力，返回3个+OK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="443.12" y="230" width="393.75" height="30" as="geometry" />
+          <mxGeometry x="460" y="230" width="360" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ilX25yQ41fgXcGCMx8rG-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ilX25yQ41fgXcGCMx8rG-11" target="ilX25yQ41fgXcGCMx8rG-8" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -103,24 +103,38 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="380" y="360" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="220" y="345" />
+              <mxPoint x="220" y="320" />
+              <mxPoint x="470" y="320" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="ilX25yQ41fgXcGCMx8rG-14" value="收到第一个+OK，状态转为RECEIVE_IP_REPLY，收到第二个转换为RECEIVE_CAPA_REPLY，第三个则转换为SEND_PSYNC，随后发起PSYNC，设置偏移量为-1，状态转为RECEIVE_PSYNC_REPLY" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="260" width="380" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ilX25yQ41fgXcGCMx8rG-17" value="PSYNC,stat_sync_full++,c-&amp;gt;replstate=WAIT_BGSAVE_START,c-&amp;gt;repldbfd=-1 ,c-&amp;gt;flags|=CLIENT_SLAVE,server.slaves.Add(c), (backlog?),检查是否该复用之前的rdb， 能的话复制缓冲区，不能则等待创建" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="429.99" y="320" width="420" height="50" as="geometry" />
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-17" value="PSYNC执行，主从复制状态转为WAIT_BGSAVE_START,检查是否该复用之前的rdb， 能的话复制缓冲区，不能则等待创建" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="469.99" y="305" width="340" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="LGcpo6t_XS2GsdhRApcy-3" value="replicatioinCron" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="430" y="400" width="420" height="50" as="geometry" />
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="zpOEcCge8EpzeLe-TnQs-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="430" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="LGcpo6t_XS2GsdhRApcy-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="ilX25yQ41fgXcGCMx8rG-17">
+        <mxCell id="LGcpo6t_XS2GsdhRApcy-3" value="replicatioinCron，创建用于父子进程通讯的两个管道，将状态转换为WAIT_BGSAVE_END，fork子进程来创建rdb，父进程轮询地读取rdb，转发给所有需要rdb的从节点（按EOF格式发送）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="360" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LGcpo6t_XS2GsdhRApcy-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="ilX25yQ41fgXcGCMx8rG-17" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="680" y="380" as="sourcePoint" />
             <mxPoint x="680" y="320" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-2" value="等待定时器执行" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LGcpo6t_XS2GsdhRApcy-4">
+          <mxGeometry x="0.1132" relative="1" as="geometry">
+            <mxPoint x="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-5" value="读取EOF格式的rdb" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="410" width="420" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
