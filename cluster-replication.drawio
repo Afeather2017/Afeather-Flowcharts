@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.10">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="1237" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="749" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -114,7 +114,7 @@
         <mxCell id="ilX25yQ41fgXcGCMx8rG-17" value="PSYNC执行，主从复制状态转为WAIT_BGSAVE_START,检查是否该复用之前的rdb， 能的话复制缓冲区，不能则等待创建" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="469.99" y="305" width="340" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="zpOEcCge8EpzeLe-TnQs-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="zpOEcCge8EpzeLe-TnQs-5">
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="zpOEcCge8EpzeLe-TnQs-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="220" y="430" as="targetPoint" />
           </mxGeometry>
@@ -128,12 +128,12 @@
             <mxPoint x="680" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zpOEcCge8EpzeLe-TnQs-2" value="等待定时器执行" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LGcpo6t_XS2GsdhRApcy-4">
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-2" value="等待定时器执行" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="LGcpo6t_XS2GsdhRApcy-4" vertex="1" connectable="0">
           <mxGeometry x="0.1132" relative="1" as="geometry">
             <mxPoint x="50" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zpOEcCge8EpzeLe-TnQs-5" value="读取EOF格式的rdb" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-5" value="读取EOF格式的rdb。先读EOF标志，再利用标志读完全部rdb，rdb此时保存在磁盘上。" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="10" y="410" width="420" height="60" as="geometry" />
         </mxCell>
       </root>
