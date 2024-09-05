@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" version="24.7.10">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="749" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="966" dy="553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -85,7 +85,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ilX25yQ41fgXcGCMx8rG-8" value="设置slave_listening_port为7001，slave_addr，增加SLAVE_CAPA_EOF和&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;SLAVE_CAPA_PSYNC2&lt;/span&gt;能力，返回3个+OK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="ilX25yQ41fgXcGCMx8rG-8" value="用replconf设置slave_listening_port为7001，slave_addr，表明具有SLAVE_CAPA_EOF和&lt;span style=&quot;background-color: initial; font-size: 12px;&quot;&gt;SLAVE_CAPA_PSYNC2&lt;/span&gt;能力，返回3个+OK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="230" width="360" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ilX25yQ41fgXcGCMx8rG-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ilX25yQ41fgXcGCMx8rG-11" target="ilX25yQ41fgXcGCMx8rG-8" edge="1">
@@ -119,8 +119,13 @@
             <mxPoint x="220" y="430" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LGcpo6t_XS2GsdhRApcy-3" value="replicatioinCron，创建用于父子进程通讯的两个管道，将状态转换为WAIT_BGSAVE_END，fork子进程来创建rdb，父进程轮询地读取rdb，转发给所有需要rdb的从节点（按EOF格式发送）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="470" y="360" width="340" height="40" as="geometry" />
+        <mxCell id="moCksS1WqdxawrKYcjqR-1" value="rdb数据" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zpOEcCge8EpzeLe-TnQs-3">
+          <mxGeometry x="0.25" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LGcpo6t_XS2GsdhRApcy-3" value="replicatioinCron，创建用于父子进程通讯的两个管道，将状态转换为WAIT_BGSAVE_END，fork子进程来创建rdb，父进程轮询地读取rdb，把状态转为SEND_BULK，转发给所有需要rdb的从节点（按EOF格式发送），转发完成后转换状态为ONLINE" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="360" width="340" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LGcpo6t_XS2GsdhRApcy-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="LGcpo6t_XS2GsdhRApcy-3" target="ilX25yQ41fgXcGCMx8rG-17" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -133,7 +138,7 @@
             <mxPoint x="50" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zpOEcCge8EpzeLe-TnQs-5" value="读取EOF格式的rdb。先读EOF标志，再利用标志读完全部rdb，rdb此时保存在磁盘上。" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="zpOEcCge8EpzeLe-TnQs-5" value="读取EOF格式的rdb。先读EOF标志，转为TRANSFER状态，再利用标志读完全部rdb，默认情况下rdb会保存在磁盘上。关闭AOF、杀死子进程、关闭与其他从节点的连接、清空backlog、清空自身所有的键值对等数据、加载rdb文件。加载成功后转为CONNECTED状态，回复replconf ack 0" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="10" y="410" width="420" height="60" as="geometry" />
         </mxCell>
       </root>
